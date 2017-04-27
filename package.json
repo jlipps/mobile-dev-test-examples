@@ -1,0 +1,7 @@
+{
+  "name": "mobile-dev-test-examples",
+  "description": "Examples for jlipps's presentation at Mobile Dev+Test 2017",
+  "dependencies": {
+    "webdriverio": "^4.7.1"
+  }
+}
