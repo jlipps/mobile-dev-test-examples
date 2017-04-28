@@ -12,6 +12,7 @@ const desiredCapabilities = {
   platformVersion: '10.2',
   deviceName: 'iPhone 7',
   app: path.resolve(__dirname, '..', 'apps', 'TestApp10.2.app.zip'),
+  automationName: 'XCUITest',
   noReset: true
 }
 
