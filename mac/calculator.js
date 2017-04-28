@@ -34,7 +34,7 @@ describe('Mac - Calculator', function () {
   before(async () => {
     // start the session
     await client.init();
-    //await client.timeoutsImplicitWait(5000);
+    await client.timeoutsImplicitWait(1000);
     await client.click(getButton('clear'));
     await client.click(getButton('clear'));
   });
