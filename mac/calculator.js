@@ -39,11 +39,16 @@ describe('Mac - Calculator', function () {
     await client.click(getButton('clear'));
   });
 
-  it('should sum some numbers', async () => {
+  it('should multiply some numbers', async () => {
+    // perform the multiplication steps
     await client.click(getButton('nine'));
     await client.click(getButton('multiply'));
     await client.click(getButton('seven'));
     await client.click(getButton('equals'));
+    // now we need to verify the display is correct.
+    // currently the mac driver has a problem finding the display element
+    // but it does put its value in the source, so just verify that
+    // we have the correct value in the source as a proxy for this
     const src = await client.getSource();
     src.should.match(/AXDescription="main display"[^>]+AXValue="63"/);
   });
