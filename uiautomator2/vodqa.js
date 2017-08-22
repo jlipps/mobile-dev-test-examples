@@ -9,7 +9,7 @@ chai.use(chaiAsPromised);
 // define the platform we want to automate
 const desiredCapabilities = {
   platformName: 'Android',
-  platformVersion: '7.1.1',
+  platformVersion: '8.0.0',
   deviceName: 'Android Emulator',
   app: path.resolve(__dirname, '..', 'apps', 'VodQA.apk'),
   automationName: 'UiAutomator2',
@@ -43,7 +43,7 @@ describe('UiAutomator2 - VodQA', function () {
     const dropLoc = await client.getLocation("~dropzone");
     await client.touchAction([
         {action: "longPress", y: dragLoc.y + 10, x: dragLoc.x + 10},
-        {action: "moveTo", y: dropLoc.y + 10, x: dragLoc.x + 10},
+        {action: "moveTo", y: dropLoc.y + 40, x: dragLoc.x + 20},
         {action: "release"}
     ]);
     const successXpath = "//android.widget.TextView[contains(@text, 'Circle dropped')]";
