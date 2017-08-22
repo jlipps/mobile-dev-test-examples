@@ -49,6 +49,8 @@ describe('Mac - Calculator', function () {
     // currently the mac driver has a problem finding the display element
     // but it does put its value in the source, so just verify that
     // we have the correct value in the source as a proxy for this
+    const txt = await client.getText("/AXApplication[@AXTitle='Calculator']/AXWindow[@AXIdentifier='_NS:477' and @AXSubrole='AXStandardWindow']/AXGroup[@AXIdentifier='_NS:9']");
+    txt.should.eql("63");
     const src = await client.getSource();
     src.should.match(/AXDescription="main display"[^>]+AXValue="63"/);
   });
